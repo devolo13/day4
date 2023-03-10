@@ -3,10 +3,38 @@ body {
   color: white;
 }
 
+/* RAINBOW TEXT FOR HEADER */
 h1 {
   text-align: center;
+  background: linear-gradient(
+    to right,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-name: rainbow_animation;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  background-size: 400% 100%;
 }
 
+@keyframes rainbow_animation {
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100%, 0%;
+  }
+}
+
+/* NORMAL FORMATTING */
 #indented {
   width: 95%;
   margin: auto;
@@ -59,11 +87,14 @@ ol {
 }
 
 .container {
+  z-index: 3;
   width: 70%;
   margin: auto;
 }
 
+/* ACTIVATE WINDOWS TEXT */
 .floating {
+  z-index: 5;
   opacity: 0.4;
   font-family: Arial, Helvetica, sans-serif;
   position: fixed;
@@ -77,4 +108,86 @@ ol {
 
 #goToSettings {
   font-size: x-small;
+}
+
+/* DVD LOGO */
+#bouncingLogo {
+  z-index: 2;
+  position: fixed;
+  animation-name: bouncing_logo;
+  animation-duration: 150s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes bouncing_logo {
+  0% {
+    left: 0%;
+    top: 0%;
+    height: 100%; /* WHY IS THIS NECESSARY? */
+    width: 100%;
+  }
+  10% {
+    left: 95.5%;
+    top: 94.5%;
+  }
+  20% {
+    left: 0%;
+    top: 10%;
+  }
+  21% {
+    left: 10%;
+    top: 0%;
+  }
+  30% {
+    left: 90%;
+    top: 94.5%;
+  }
+  32% {
+    left: 95.5%;
+    top: 80%;
+  }
+  40% {
+    left: 30%;
+    top: 0%;
+  }
+  44% {
+    left: 0%;
+    top: 40%;
+  }
+  52% {
+    left: 50%;
+    top: 94.5%;
+  }
+  60% {
+    left: 95.5%;
+    top: 40%;
+  }
+  68% {
+    left: 40%;
+    top: 0%;
+  }
+  74% {
+    left: 0%;
+    top: 20%;
+  }
+  82% {
+    left: 40%;
+    top: 94.5%;
+  }
+  88% {
+    left: 95.5%;
+    top: 70%;
+  }
+  93% {
+    left: 60%;
+    top: 00%;
+  }
+  100% {
+    left: 0%;
+    top: 94.5%;
+    height: 100%;
+    width: 100%;
+  }
 }
